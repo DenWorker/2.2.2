@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="/resources/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/resources/static/css/icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/resources/static/css/style.css" rel="stylesheet">
+
+
+    <title>Машины</title>
+</head>
+<body>
+<div th:replace="navbar.html"></div>
+
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="row p-3">
+        <div class="card" style="width: 40rem;">
+            <div class="card-header" style="color: #aeff6d; font-size: 40px">Карточка машин</div>
+            <div class="card-body">
+                <table class="table table-hover table-sm caption-top border-info text-center">
+                    <caption>Тачки</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">id машины</th>
+                        <th scope="col">Модель машины</th>
+                        <th scope="col">Серия машины</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="car : ${listOfCars}">
+                        <td th:text="${car.getId()}"></td>
+                        <td th:text="${car.getModel()}"></td>
+                        <td th:text="${car.getSeries()}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/resources/static/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>
